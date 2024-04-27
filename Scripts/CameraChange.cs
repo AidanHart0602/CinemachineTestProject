@@ -6,8 +6,8 @@ public class CameraChange : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] virtualCameras;
-    private bool undoSwap = false;
-  
+    [SerializeField]
+    private int virtualCamNum = 0;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -18,17 +18,19 @@ public class CameraChange : MonoBehaviour
 
     private void SwapCamera()
     {
-        if(undoSwap == true)
+        if (virtualCamNum == 3)
         {
-            virtualCameras[0].SetActive(true);
-            virtualCameras[1].SetActive(true);
-            undoSwap = false;
+            virtualCameras[virtualCamNum].SetActive(false);
+            virtualCamNum = 0;
+            virtualCameras[virtualCamNum].SetActive(true);
+            return;
         }
-        else
+
+        if (virtualCamNum <= 2)
         {
-            virtualCameras[0].SetActive(false);
-            virtualCameras[1].SetActive(false);
-            undoSwap = true;
+            virtualCameras[virtualCamNum].SetActive(false);
+            virtualCamNum += 1;
+            virtualCameras[virtualCamNum].SetActive(true);
         }
     }
 }
