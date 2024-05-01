@@ -32,10 +32,10 @@ public class PlayerCamera : MonoBehaviour
             _3DCamera.SetActive(false);
             _orbitalCamera.SetActive(true);
         }
-        else
+        else if(Input.GetMouseButtonUp(1))
         {
             _3DCamera.SetActive(true);
-            _orbitalCamera.SetActive(false);
+           _orbitalCamera.SetActive(false);
         }
     }
 }
