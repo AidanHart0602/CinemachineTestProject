@@ -12,6 +12,18 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
+      : Any
+    second:
+      enabled: 0
+      settings:
+        Exclude Android: 1
+        Exclude Editor: 0
+        Exclude Linux64: 0
+        Exclude OSXUniversal: 0
+        Exclude WebGL: 1
+        Exclude Win: 0
+        Exclude Win64: 0
+  - first:
       : Linux
     second:
       enabled: 1
@@ -46,7 +58,8 @@ PluginImporter:
     second:
       enabled: 0
       settings:
-        CPU: AnyCPU
+        AndroidSharedLibraryType: Executable
+        CPU: ARMv7
   - first:
       Any: 
     second:
